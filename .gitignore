@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+dist/
+evals/runs/
+evals/run_cwd/
+.yomiyasu/
