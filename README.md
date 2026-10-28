@@ -89,28 +89,21 @@ Claude Code を新しく起動すると、スキルが使えます。
 
 ### Microsoft 365 Copilot（エージェント）
 
-Copilot のエージェントビルダーで、カスタムスキルを使う場合の手順です。
+Copilot のエージェントビルダーで、カスタムスキルを使う場合の手順です。手順の中身は、スキルの現行版（立ち位置、解剖、止まる箇所、ラベル。出力は質問、今の資料での答え、足りないときだけ足す位置）です。
 
-前提（Microsoft の資料による）:
-
-- カスタムスキルは、プレビュー機能です。Microsoft Frontier プログラムに登録された組織だけが使えます。
-- Microsoft Purview の情報バリアを使うテナントでは、使えません。
-- 現時点では、スキルと「埋め込みファイル」を、同じエージェントで併用できません。
-
-手順:
-
-1. スキルの ZIP を作ります。
+1. スキルの ZIP を作ります。`dist/` は gitignore されているので、クローンしただけでは ZIP はありません。
 
    ```bash
    python3 scripts/build_copilot_zip.py
    ```
 
-   `dist/sakimawari.zip` ができます。
+   `dist/sakimawari.zip` ができます。解凍せず、構成タブの「スキル」から追加します。
 
-2. エージェントを新しく作り、「指示」欄に、[`copilot/エージェント指示文.md`](copilot/エージェント指示文.md) の中身を貼ります。
-3. 「スキル」の「追加」から、`dist/sakimawari.zip` を、解凍せずにアップロードします。
+2. エージェントの「手順」欄（英語版の Instructions）に、[`copilot/エージェント指示文.md`](copilot/エージェント指示文.md) を貼ります。
+3. スキルを追加できない人は、[`copilot/チャット貼り付け.md`](copilot/チャット貼り付け.md) の「貼る本文」を、チャットの入力欄に貼ります。
+4. 毎回のチャットに短い型だけ残すときは、[`copilot/カスタム指示.md`](copilot/カスタム指示.md) を Chat 設定のカスタム指示に保存します。Copilot メモリとは別の欄です。
 
-詳しくは、[`copilot/登録手順.md`](copilot/登録手順.md)。Copilot がスキルの補足資料をどこまで読むかを調べる方法は、[`copilot/読み込み確認/手順.md`](copilot/読み込み確認/手順.md) にあります。
+前提、欄の正式名、文字数、出典は、[`copilot/登録手順.md`](copilot/登録手順.md)。スキルの補足資料をどこまで読むかの確認は、[`copilot/読み込み確認/手順.md`](copilot/読み込み確認/手順.md)。
 
 ## 使い方
 
@@ -165,7 +158,7 @@ Copilot のエージェントビルダーで、カスタムスキルを使う場
 ```
 sakimawari/
 ├── skills/sakimawari/        Claude Code 用のスキル（SKILL.md と references）
-├── copilot/                  Copilot のエージェント用（指示文、登録手順、読み込みの確認）
+├── copilot/                  Copilot 用（エージェントの手順、チャット貼り付け、カスタム指示、登録手順、読み込みの確認）
 ├── docs/
 │   ├── theory.md             理論と根拠
 │   └── 要件定義書.md          設計の記録（要件、判断、評価）
