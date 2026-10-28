@@ -38,7 +38,7 @@ mkdir -p ~/.claude/skills
 cp -R sakimawari/skills/sakimawari ~/.claude/skills/sakimawari
 ```
 
-Microsoft 365 Copilot: build `dist/sakimawari.zip` with `python3 scripts/build_copilot_zip.py` (the `dist/` directory is gitignored), paste `copilot/エージェント指示文.md` into the agent Instructions field, and upload the ZIP under Configure > Skills. If you cannot add a skill, paste `copilot/チャット貼り付け.md` into the chat box. A short Custom instructions text is in `copilot/カスタム指示.md`. Field names, character counts, and Microsoft docs are in [copilot/登録手順.md](copilot/登録手順.md) (Japanese).
+Microsoft 365 Copilot: download [copilot/sakimawari.zip](copilot/sakimawari.zip) from GitHub (no Python), paste `copilot/エージェント指示文.md` into the agent Instructions field, and upload that ZIP under Configure > Skills. If you cannot add a skill, paste `copilot/チャット貼り付け.md` into the chat box. A short Custom instructions text is in `copilot/カスタム指示.md`. Field names, character counts, and Microsoft docs are in [copilot/登録手順.md](copilot/登録手順.md) (Japanese).
 
 ## What the evidence does and does not show
 

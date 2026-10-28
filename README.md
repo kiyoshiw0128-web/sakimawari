@@ -91,13 +91,7 @@ Claude Code を新しく起動すると、スキルが使えます。
 
 Copilot のエージェントビルダーで、カスタムスキルを使う場合の手順です。手順の中身は、スキルの現行版（立ち位置、解剖、止まる箇所、ラベル。出力は質問、今の資料での答え、足りないときだけ足す位置）です。
 
-1. スキルの ZIP を作ります。`dist/` は gitignore されているので、クローンしただけでは ZIP はありません。
-
-   ```bash
-   python3 scripts/build_copilot_zip.py
-   ```
-
-   `dist/sakimawari.zip` ができます。解凍せず、構成タブの「スキル」から追加します。
+1. [`copilot/sakimawari.zip`](copilot/sakimawari.zip) を、GitHub からダウンロードします。Python は要りません。解凍せず、構成タブの「スキル」から追加します。
 
 2. エージェントの「手順」欄（英語版の Instructions）に、[`copilot/エージェント指示文.md`](copilot/エージェント指示文.md) を貼ります。
 3. スキルを追加できない人は、[`copilot/チャット貼り付け.md`](copilot/チャット貼り付け.md) の「貼る本文」を、チャットの入力欄に貼ります。
